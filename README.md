@@ -3,6 +3,9 @@
 http://licence-info.univ-lyon1.fr/grapic
 
 
+[![Github All Releases](https://img.shields.io/github/downloads/ucacaxm/grapic/total.svg)]()
+
+
 ## Introduction
 
 GrAPiC is a small, easy-to-use framework to add graphical functionalities to your C/C++ code. 
