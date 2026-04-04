@@ -7,7 +7,7 @@ http://licence-info.univ-lyon1.fr/grapic
 
 ## Linux & VS Code Fix
 
-This repository is a modified version of the original Grapic project.  
+This repository is a modified version of the original Grapic project.
 It contains configuration fixes and documentation improvements for Linux users.
 
 
@@ -93,7 +93,7 @@ This will:
 
 Now you can press:
 
-Ctrl + Alt + G
+`Ctrl + Alt + G`
 
 to compile and run the program.
 
