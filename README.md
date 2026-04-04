@@ -39,6 +39,14 @@ This version fixes the configuration to make it work properly on Linux using Vis
 * Ubuntu Linux
 * Visual Studio Code
 * g++
+## Prerequisites / Install
+
+Before using this workspace on Linux, make sure you have the following tools and libraries installed:
+
+```bash
+sudo apt update
+sudo apt install -y g++ doxygen zip lib-sdl2-dev libsdl2-image-dev libsdl2-ttf-dev
+```
 
 ---
 
