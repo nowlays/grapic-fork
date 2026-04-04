@@ -60,23 +60,26 @@ This will:
 
 ### Step 3 - How to Add the Keyboard Shortcut (Ctrl + Alt + G)
 
-2. Open Keyboard Shortcuts:
+1. Open Keyboard Shortcuts:
 
    * Press `Ctrl + K` then `Ctrl + S`
 
-3. Click the icon in the top-right: **Open Keyboard Shortcuts (JSON)** 
+2. Click the icon in the top-right: **Open Keyboard Shortcuts (JSON)** 
 
-4. Add the following block:
+3. Add the following block:
 
+
+```json
 {
     "key": "ctrl+alt+g",
     "command": "workbench.action.tasks.runTask",
     "args": "Run Grapic"
 }
+```
 
 **Important: do not remove the existing brackets `[ ]`. Just paste this block inside the array.**
 
-5. Save the file
+4. Save the file
 
   * Press `Ctrl + S`
 
