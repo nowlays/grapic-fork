@@ -1,47 +1,54 @@
 {
-    // See https://go.microsoft.com/fwlink/?LinkId=733558
-    // for the documentation about the tasks.json format
     "version": "2.0.0",
     "tasks": [
-		{
-			"label": "Compilation with makefile",
-			"type": "shell",
-			"command": "cd build\\windows-cb20 ; mingw32-make -f start.make",	// NOM DU PROJET A CHANGER SI VOUS VOULEZ CIBLER UN AUTRE PROJET
- 			"group": {
-				"kind": "build",
-				"isDefault": true
-			}
-		},
-		{
-			"label": "Run",
-			"type": "shell",
-			"command": "bin\\start.exe",	// NOM DE L'EXECUTABLE A CHANGER SI VOUS VOULEZ CIBLER UN AUTRE PROJET
-			"group": {
-				"kind": "test",
-				"isDefault": true
-			},
-			"problemMatcher": []
-		},
-		{
-			"label": "Compilation",
-			"type": "shell",
-			"command": "g++",
-			"args": [
-				"-std=c++17",
-				"-o",
-				"${workspaceFolder}\\bin\\start.exe",
-				"${workspaceFolder}\\apps\\start\\main_start.cpp",
-				"${workspaceFolder}\\src\\Grapic.cpp",
-				"-I${workspaceFolder}\\src",
-				"-I${workspaceFolder}\\extern\\mingw-cb20\\include",
-				"-I${workspaceFolder}\\extern\\mingw-cb20\\include\\SDL2",
-				"-Lextern\\mingw-cb20\\lib",
-				"-lmingw32",
-				"-lSDL2main",
-				"-lSDL2",
-				"-lSDL2_ttf",
-				"-lSDL2_image"
-			]
-		}
-	]
+        {
+            "label": "Compile Grapic",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-std=c++17",
+                "-Wall",
+                "-Wextra",
+                "-Wno-sign-compare",
+                "-Wno-unused-variable",
+                "-g",
+                "-I${workspaceFolder}/src",
+                "-I/usr/include/SDL2",
+                "-o",
+                "${workspaceFolder}/bin/${fileBasenameNoExtension}",
+                "${file}",
+                "${workspaceFolder}/src/Grapic.cpp",
+                "-lSDL2",
+                "-lSDL2_image",
+                "-lSDL2_ttf",
+                "-lSDL2_mixer"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"],
+            "detail": "Compile any Grapic C++ file in the workspace"
+        },
+        {
+            "label": "Run Grapic",
+            "type": "shell",
+            "command": "${workspaceFolder}/bin/${fileBasenameNoExtension}",
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "dependsOn": "Compile Grapic",
+            "problemMatcher": [],
+            "detail": "Run the compiled Grapic program"
+        },
+        {
+            "label": "Clean build",
+            "type": "shell",
+            "command": "rm -f ${workspaceFolder}/bin/${fileBasenameNoExtension}",
+            "group": "build",
+            "problemMatcher": [],
+            "detail": "Delete the executable to rebuild cleanly"
+        }
+    ]
 }
