@@ -60,7 +60,7 @@ Open the `grapic` folder using Visual Studio Code.
 
 Press:
 
-Ctrl + Shift + B
+`Ctrl + Shift + B`
 
 This will:
 
