@@ -45,7 +45,7 @@ Before using this workspace on Linux, make sure you have the following tools and
 
 ```bash
 sudo apt update
-sudo apt install -y g++ doxygen zip lib-sdl2-dev libsdl2-image-dev libsdl2-ttf-dev
+sudo apt install -y g++ doxygen zip libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev
 ```
 
 ---
